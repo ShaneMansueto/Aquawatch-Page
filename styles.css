@@ -1,0 +1,78 @@
+:root {
+  /* High-fidelity palette (HSL for vibrancy/shading) */
+  --bg: 210 40% 98%;
+  --card: 0 0% 100%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 210 40% 98%;
+  --muted: 210 20% 90%;
+  --accent: 175 75% 45%; /* Aqua accent */
+  --border: 210 20% 90%;
+  --radius: 0.75rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: hsl(var(--bg));
+  color: hsl(222 47% 11%);
+  line-height: 1.6;
+}
+
+/* 21st.dev style Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid hsl(var(--border));
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Modern Card Component */
+.feature-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+  border-color: hsl(var(--accent) / 0.5);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+/* Fluid Typography */
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+
+/* Micro-interaction Buttons */
+a.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a.btn-primary:hover {
+  opacity: 0.9;
+}
